@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class JapaneseRestaurantPOS {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double total = 0.0;
+
+        System.out.println("Japanese Restaurant POS System\n");
+
+        while (true) {
+            System.out.println("Menu:");
+            System.out.println("1. Sushi - $10.99");
+            System.out.println("2. Ramen - $8.99");
+            System.out.println("3. Tempura - $6.99");
+            System.out.println("4. Checkout");
+            System.out.print("Enter menu choice: ");
+            int choice = scanner.nextInt();
+
+            if (choice == 4) {
+                break;
+            }
+
+            double price = 0.0;
+            String item = "";
+
+            switch (choice) {
+                case 1:
+                    price = 10.99;
+                    item = "Sushi";
+                    break;
+                case 2:
+                    price = 8.99;
+                    item = "Ramen";
+                    break;
+                case 3:
+                    price = 6.99;
+                    item = "Tempura";
+                    break;
+                default:
+                    System.out.println("Invalid choice!");
+                    continue;
+            }
+
+            total += price;
+            System.out.println(item + " added to the order. Current total: $" + total + "\n");
+        }
+
+        System.out.println("Total: $" + total);
+        System.out.println("Thank you for dining at our Japanese restaurant!");
+    }
+}
